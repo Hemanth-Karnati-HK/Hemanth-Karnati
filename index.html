@@ -45,8 +45,11 @@
           <p class="description">I'm Hemanth Karnati, a Computer Science and Engineering undergrad at VIT-Vellore, passionate about innovating in machine learning and computer science. Transitioning from basics to leading projects, I focus on leveraging technology for meaningful impact, with achievements in machine learning research and app development.
           </p>
           <div class="action__btns">
-            <button class="hire__me">Hire Me</button>
-            <button class="portfolio">Linkedin</button>
+            <!--<button class="hire__me">Hire Me</button> -->
+            <a href="mailto:karnati.hemanth2123@gmail.com?subject=Interest in Your Profile - Let's Discuss Further Opportunities" class="hire__me action__btns">Hire Me</a>
+
+
+            <button class="portfolio" id="linkedinButton">Linkedin</button>
           </div>
         </div>
         <!--<div class="image">
@@ -54,14 +57,18 @@
         </div>  -->
 
         <div class="image" id="slideShow">
-            <div class="slide"style="color:orange;">Actively seeking full-time opportunities in Software Engineering </div>
-            <div class="slide"style="color:green;">Interested in ML Research (applied ML)</div>
-            <div class="slide" style="color:blue;">Technical Skills: C++, Python, Java Script</div>
-            <div class="slide"style="color:pink;">2024 passout</div>
-            <div class="slide"style="color:red;">Actively seeking full-time opportunities in Data Science</div>
+            <div class="slide"style="color:#000080;">Actively Seeking full-time roles in Software Engineering </div>
+            <div class="slide"style="color:orange;">Eager to engage in applied ML Research</div>
+            <div class="slide"style="color:green;">Actively seeking full-time opportunities in Data Science</div>
+            <div class="slide"style="color:#FF6B6B;">Open to Research project collaborations</div>
             <div class="animation-container">
                 <div class="line"></div>
                 <!--<div class="ball"></div> -->
+                <div class="emoji1" id="ball">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                    <div class="mouth"></div>
+                  </div> 
               </div>
               
         </div>
@@ -92,6 +99,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Change slide every 4 seconds
     setInterval(nextSlide, 4000);
 });
+
+document.getElementById('linkedinButton').addEventListener('click', function() {
+    window.location.href = 'https://www.linkedin.com/in/hemanthkarnati/';
+});
+
 
 </script>
 
