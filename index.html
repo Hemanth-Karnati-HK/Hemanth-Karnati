@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Hemanth Karnati</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo">
+            <a href="#">Hemanth</a><div class="emoji">
+              <div class="eye left-eye"></div>
+              <div class="eye right-eye"></div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+          
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">HELLO</p>
+          <h1 class="title">
+            I'm <span>Hemanth<br /> </span> 
+          </h1>
+          <p class="description">I'm Hemanth Karnati, a Computer Science and Engineering undergrad at VIT-Vellore, passionate about innovating in machine learning and computer science. Transitioning from basics to leading projects, I focus on leveraging technology for meaningful impact, with achievements in machine learning research and app development.
+          </p>
+          <div class="action__btns">
+            <button class="hire__me">Hire Me</button>
+            <button class="portfolio">Portfolio</button>
+          </div>
+        </div>
+        <!--<div class="image">
+          <img src="assets/profile.jpg" alt="profile" />
+        </div>  -->
+
+        <div class="image" id="profileAnimationContainer">
+            <canvas id="profileAnimation"></canvas>
+        </div>
+        
+
+        
+          
+          
+      </div>
+    </section>
+  </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const canvas = document.getElementById('profileAnimation');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth * 0.5; 
+    canvas.height = 500; 
+
+    let particlesArray = [];
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 5 + 1;
+            this.speedX = Math.random() * 3 - 1.5;
+            this.speedY = Math.random() * 3 - 1.5;
+        }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.size > 0.2) this.size -= 0.1;
+        }
+        draw() {
+            ctx.fillStyle = 'rgba(168,85,247,1)'; 
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function init() {
+        for (let i = 0; i < 100; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+    init();
+
+    function handleParticles() {
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+            for (let j = i; j < particlesArray.length; j++) {
+                const dx = particlesArray[i].x - particlesArray[j].x;
+                const dy = particlesArray[i].y - particlesArray[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = 'rgba(168,85,247,0.1)'; 
+                    ctx.lineWidth = 2;
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+            }
+            if (particlesArray[i].size <= 0.3) {
+                particlesArray.splice(i, 1);
+                i--;
+                particlesArray.push(new Particle());
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        handleParticles();
+        requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth * 0.5;
+        canvas.height = 500;
+    });
+});
+</script>
+
+</html>
