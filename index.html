@@ -135,9 +135,14 @@
     animate();
 
     window.addEventListener('resize', function() {
-        canvas.width = window.innerWidth * 0.5;
-        canvas.height = 500;
-    });
+  // Adjust canvas size for larger screens
+  if(window.innerWidth > 750) {
+    canvas.width = window.innerWidth * 0.5;
+    canvas.height = 500;
+  }
+  // Optional: Add logic here to pause or stop the animation for smaller screens if needed
+});
+
 });
 </script>
 
