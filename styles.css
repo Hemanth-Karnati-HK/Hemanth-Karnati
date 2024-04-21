@@ -92,7 +92,7 @@ ul li a:hover {
   background-color: var(--extra-light);
 }
 
-.section__container {
+/*.section__container {
   min-height: 100vh;
   max-width: var(--max-width);
   margin: auto;
@@ -100,7 +100,20 @@ ul li a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
+} */
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 2rem; /* Adjust gap as needed */
+  align-items: center; /* Vertically center the grid items */
+  position: relative;
 }
+
 
 .content {
   display: flex;
@@ -172,7 +185,16 @@ ul li a:hover {
 .image {
   display: grid;
   place-items: center;
-}
+  margin-top: 50px;
+  position: relative;
+  top: 50px; 
+} 
+
+/*.image {
+  position: relative;
+  top: 50px; 
+} 
+*/
 
 .image img {
   width: min(25rem, 90%);
@@ -181,6 +203,28 @@ ul li a:hover {
   object-fit: cover;
 }
 
+
+#slideShow {
+  position: relative;
+  width: 280px;
+  height: 200px; /* Keep width and height the same for a square */
+  margin: 0 auto; /* Center the slideshow */
+  overflow: hidden; /* Hide the non-active slides */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
 
 .emoji {
   display: inline-block; 
@@ -261,3 +305,4 @@ ul li a:hover {
     margin: auto;
   }
 }
+

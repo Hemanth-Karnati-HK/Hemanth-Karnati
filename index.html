@@ -53,9 +53,14 @@
           <img src="assets/profile.jpg" alt="profile" />
         </div>  -->
 
-        <div class="image" id="profileAnimationContainer">
-            <canvas id="profileAnimation"></canvas>
+        <div class="image" id="slideShow">
+            <div class="slide"style="color:orange;">Actively seeking full-time opportunities in Software Engineering </div>
+            <div class="slide"style="color:green;">Interested in ML Research (applied ML)</div>
+            <div class="slide" style="color:blue;">Technical Skills: C++, Python, Java Script</div>
+            <div class="slide"style="color:pink;">2024 passout</div>
+            <div class="slide"style="color:red;">Actively seeking full-time opportunities in Data Science</div>
         </div>
+        
         
 
         
@@ -65,85 +70,25 @@
     </section>
   </body>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.getElementById('profileAnimation');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth * 0.5; 
-    canvas.height = 500; 
 
-    let particlesArray = [];
+document.addEventListener("DOMContentLoaded", function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 5 + 1;
-            this.speedX = Math.random() * 3 - 1.5;
-            this.speedY = Math.random() * 3 - 1.5;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.size > 0.2) this.size -= 0.1;
-        }
-        draw() {
-            ctx.fillStyle = 'rgba(168,85,247,1)'; 
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+    slides[currentSlide].classList.add('active');
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add('active');
     }
 
-    function init() {
-        for (let i = 0; i < 100; i++) {
-            particlesArray.push(new Particle());
-        }
-    }
-    init();
-
-    function handleParticles() {
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-            particlesArray[i].draw();
-            for (let j = i; j < particlesArray.length; j++) {
-                const dx = particlesArray[i].x - particlesArray[j].x;
-                const dy = particlesArray[i].y - particlesArray[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 100) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = 'rgba(168,85,247,0.1)'; 
-                    ctx.lineWidth = 2;
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                    ctx.stroke();
-                    ctx.closePath();
-                }
-            }
-            if (particlesArray[i].size <= 0.3) {
-                particlesArray.splice(i, 1);
-                i--;
-                particlesArray.push(new Particle());
-            }
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        handleParticles();
-        requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener('resize', function() {
-  // Adjust canvas size for larger screens
-  if(window.innerWidth > 750) {
-    canvas.width = window.innerWidth * 0.5;
-    canvas.height = 500;
-  }
-  // Optional: Add logic here to pause or stop the animation for smaller screens if needed
+    // Change slide every 4 seconds
+    setInterval(nextSlide, 4000);
 });
 
-});
 </script>
+
 
 </html>
