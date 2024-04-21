@@ -206,8 +206,8 @@ ul li a:hover {
 
 #slideShow {
   position: relative;
-  width: 280px;
-  height: 200px; /* Keep width and height the same for a square */
+  width: 300px;
+  height: 130px; /* Keep width and height the same for a square */
   margin: 0 auto; /* Center the slideshow */
   overflow: hidden; /* Hide the non-active slides */
 }
@@ -215,7 +215,7 @@ ul li a:hover {
 .slide {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   top: 0;
   left: 0;
   opacity: 0;
@@ -303,6 +303,41 @@ ul li a:hover {
 
   .action__btns {
     margin: auto;
+  }
+}
+
+.animation-container {
+  position: relative;
+  width: 100%;
+  height: 50px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  background-color: black; /* Color of the line */
+}
+
+.ball {
+  position: absolute;
+  width: 20px; /* Diameter of the ball */
+  height: 20px; /* Diameter of the ball */
+  border-radius: 50%;
+  background-color: red; /* Color of the ball */
+  transform: translateX(0%);
+  animation: roll 4s infinite linear;
+}
+
+@keyframes roll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 
