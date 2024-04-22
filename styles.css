@@ -1,13 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
-  --primary-color: #a855f7; 
+  /*--primary-color: #a855f7; 
   --primary-color-dark: #9333ea;
   --secondary-color: #ca8a04;
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --extra-light: #faf5ff;
-  --max-width: 1200px;
+  --max-width: 1200px; */
+
+  --primary-color: #000080; 
+  --primary-color-dark:#000080;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px; 
+  
 }
 
 * {
@@ -384,4 +393,5 @@ ul li a:hover {
 }
 
 
+/*projects */
 
