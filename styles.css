@@ -35,13 +35,19 @@ body {
 
 nav {
   width: 100%;
-  /*position: fixed; */
+   
   top: 0;
   left: 0;
   background-color: #ffffff;
   /*z-index: 99; */
   position: relative; /* Adjusted to ensure z-index works correctly */
   z-index: 1000;
+
+  transition: top 0.3s;
+}
+
+nav.fixed {
+  top: 0; /* Keep the navigation bar at the top when fixed */
 }
 
 .nav__content {
@@ -101,7 +107,8 @@ ul li a:hover {
 
 .section {
   background-color: var(--extra-light);
-  /* margin-top: 70px;     Adjust this value based on the height of your navigation bar */
+  /*margin-top: 70px;    /* Adjust this value based on the height of your navigation bar */
+  
 }
 
 
@@ -424,7 +431,9 @@ nav {
   width: 100%;
   background-color: #f8f8f8;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000;
 }
 
@@ -433,6 +442,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px; /* Increased padding for greater height */
+}
+
+.psection {
+  background-color: var(--extra-light);
+  /* margin-top: 70px;     Adjust this value based on the height of your navigation bar */
+  padding-top: 70px;
 }
 
 .logo a {

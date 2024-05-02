@@ -38,7 +38,7 @@
       </div>
     </nav>
     
-    <section class="section">
+    <section class="psection">
         <!--<div class="section__container">  -->
           
 
@@ -91,5 +91,15 @@
     </footer>
     
   </body>
-
+<script>
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 0) {
+      nav.classList.add('fixed');
+    } else {
+      nav.classList.remove('fixed');
+    }
+  });
+  
+</script>
 </html>
