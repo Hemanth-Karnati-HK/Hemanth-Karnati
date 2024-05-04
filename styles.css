@@ -612,3 +612,138 @@ footer {
     border-radius: 3px; /* Full radius for a standalone image */
   }
 }
+
+
+/*research */
+
+/* research */
+.publications {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+}
+
+.publication {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 90%; /* Adjusted to be 90% of the container */
+  max-width: 600px; /* Maximum width */
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.journal-year {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.journal, .year {
+  font-size: 1rem;
+}
+
+.year {
+  color: #007bff; /* Highlighted in blue */
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #d3d3d3; /* Line before abstract */
+  margin: 10px 0;
+}
+
+.authors {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #666; /* Light color */
+}
+
+.abstract {
+  font-size: 1rem;
+  font-family: "Georgia", serif; /* Stylish font */
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate text */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show only 2 lines */
+  -webkit-box-orient: vertical;
+}
+
+.abstract.full {
+  -webkit-line-clamp: initial; /* Show full text */
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.publication-link, .other-documents {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px; /* Add spacing between buttons */
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.publication-link:hover, .other-documents:hover {
+  background-color: #0056b3;
+}
+
+
+/*message*/
+
+/* Styles for the message box */
+.message-box {
+  margin: 100px auto;
+  width: 60%;
+  max-width: 600px;
+  padding: 30px;
+  background: #f5f5f5;
+  border: 2px solid #c1c1c1;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.message-title {
+  font-size: 2rem;
+  color: #4a90e2; /* Primary color */
+  margin-bottom: 20px;
+}
+
+.message-content {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.go-back {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #4a90e2; /* Primary color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.go-back:hover {
+  background-color: #357abd; /* Darker shade on hover */
+}

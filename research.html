@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="9yxa4X3O_V4bbAy4JMRJG1gTDqygv5824MAXZdVLevs" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon (1).ico" type="image/x-icon" />
+    <title>Hemanth Karnati</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo">
+            <a href="#">Hemanth</a>
+            <div class="emoji">
+              <div class="eye left-eye"></div>
+              <div class="eye right-eye"></div>
+              <div class="mouth"></div>
+            </div>
+          </div>
+          
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#">Research Publications</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <section class="publications">
+        <div class="publication">
+          <div class="publication-details">
+            <h2 class="title">Vision Transformers in Healthcare Imaging with Utilizing GAN for Data Augmentation</h2>
+            <div class="journal-year">
+              <p class="journal">IEEE International Conference on Contemporary Computing and Communications (InC4)</p>
+              <p class="year">  2024</p>
+            </div>
+            <hr class="separator" />
+          </div>
+          <div class="publication-authors">
+            <p class="authors">Hemanth Karnati, SujayKumar Reddy M</p>
+          </div>
+          <div class="publication-abstract">
+            <p class="abstract">Advancements in medical imaging have been significantly driven by deep learning technologies, particularly Convolutional Neural Networks (CNNs). However, dataset imbalances pose a challenge, as underrepresented medical conditions can lead to biases in diagnostic models. This research tackles this issue by leveraging Generative Adversarial Networks (GANs) for data augmentation in chest radiography. Using the ChestXray2017 dataset, which is heavily skewed towards pneumonia cases, Deep Convolution Generative Adversarial Networks (DCGAN) were employed to generate synthetic images of normal chest X-rays, balancing the dataset. The performance of a CNN was then compared before and after augmenting the data with these synthetic images. Initially, the CNN achieved 93% training accuracy and 87% validation accuracy on the un-augmented dataset. After adding 400 synthetic normal chest X-rays, training accuracy rose to 95%, while validation accuracy improved to 89%, indicating better generalization due to a more balanced dataset. Although GAN-based augmentation appears effective for addressing class imbalances, further research is needed to understand the quality and ethical implications of using synthetic images. Overall, integrating GAN-generated images into CNN training provides a promising method to improve classification performance in medical imaging, offering a practical solution to data scarcity and imbalance.</p>
+            <a href="#" class="read-more">Read more</a>
+            <a href="message.html" class="publication-link">View Publication</a>
+            <a href="https://drive.google.com/file/d/18-AvKYBrRRLQJ9fzx4sbnJuX3dR1_OdN/view" class="other-documents">Other Documents</a>
+          </div>
+        </div>
+      </section>
+      
+    <footer>
+        <div class="socials">
+            <a href="https://www.facebook.com/yourpage" target="_blank"><i class='bx bxl-facebook-square' style="color:black;"></i></a>
+            <a href="https://www.instagram.com/yourpage" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="https://twitter.com/HemanthKarnati" target="_blank"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com/company/yourpage" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+        </div>
+        <p>Copyright ©2024, All rights reserved.</p>
+    </footer>
+    
+  </body>
+<script>
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 0) {
+      nav.classList.add('fixed');
+    } else {
+      nav.classList.remove('fixed');
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const readMoreLinks = document.querySelectorAll(".read-more");
+  readMoreLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+      const abstract = event.target.previousElementSibling;
+      abstract.classList.toggle("full");
+      if (abstract.classList.contains("full")) {
+        event.target.textContent = "Read less";
+      } else {
+        event.target.textContent = "Read more";
+      }
+    });
+  });
+});
+
+</script>
+</html>
