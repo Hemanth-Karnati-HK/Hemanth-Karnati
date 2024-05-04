@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hemanth Karnati</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon (1).ico" type="image/x-icon" />
+
+    <style>
+        .box-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 900px;
+            margin: 100px auto 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            perspective: 1000px;
+        }
+
+        .box-content {
+            width: 100%;
+            height: 100%;
+            background-color: #f4f4f4;
+            color: #ff7700; /* Number in orange */
+            font-size: 1.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.6s;
+        }
+
+        .box-content:hover {
+            transform: rotateX(10deg) rotateY(10deg);
+        }
+
+        .description {
+            font-size: 0.7em;
+            margin-top: 5px;
+            color: #000; /* Description in black */
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .box-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__content">
+            <div class="logo">
+                <a href="#">Hemanth</a>
+                <div class="emoji">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="box-content">
+                <span id="publications-counter">0+</span>
+                <div class="description">Research Publications</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <span id="leetcode-counter">0+</span>
+                <div class="description">LeetCode Challenges</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <span id="projects-counter">0+</span>
+                <div class="description">Impact Projects</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-content">
+                <span id="certifications-counter">0+</span>
+                <div class="description">Certification Courses</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function animateCounter(id, target, duration) {
+            const element = document.getElementById(id);
+            let start = 0;
+            const increment = target / (duration * 1000 / 60);
+            const step = () => {
+                start = Math.min(start + increment, target);
+                element.innerText = Math.floor(start) + "+";
+                if (start < target) {
+                    requestAnimationFrame(step);
+                }
+            };
+            step();
+        }
+
+        animateCounter('publications-counter', 5, 10);
+        animateCounter('leetcode-counter', 300, 10);
+        animateCounter('projects-counter', 10, 10);
+        animateCounter('certifications-counter', 10, 10);
+    </script>
+</body>
+</html>
