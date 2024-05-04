@@ -616,25 +616,27 @@ footer {
 
 /*research */
 
-/* research */
+/* Research Publications */
+/* Research Publications */
 .publications {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 100px;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  align-items: center;
+  padding-top: 70px; /* Add space between navigation and first box */
+  margin-bottom: 20px;
 }
 
 .publication {
   background-color: #f0f0f0;
-  padding: 20px;
-  margin: 20px;
+  padding: 25px; /* Slightly increased padding */
+  margin: 20px 15px; /* Adjusted side margins */
   border-radius: 10px;
-  width: 90%; /* Adjusted to be 90% of the container */
-  max-width: 600px; /* Maximum width */
+  width: 95%; /* Slightly increased width */
+  max-width: 700px; /* Increase maximum width */
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.3rem; /* Slightly larger title font */
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -646,7 +648,7 @@ footer {
 }
 
 .journal, .year {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Slightly larger font for journal and year */
 }
 
 .year {
@@ -671,7 +673,7 @@ footer {
   font-family: "Georgia", serif; /* Stylish font */
   margin-bottom: 10px;
   overflow: hidden;
-  text-overflow: ellipsis; /* Truncate text */
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Show only 2 lines */
   -webkit-box-orient: vertical;
@@ -704,6 +706,49 @@ footer {
 .publication-link:hover, .other-documents:hover {
   background-color: #0056b3;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .publication {
+    width: 95%; /* Slightly wider for smaller screens */
+    margin: 15px 0; /* Reduced vertical spacing between items */
+    padding: 20px; /* Adjust padding to fit smaller screens */
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .authors, .journal, .year {
+    font-size: 1rem;
+  }
+
+  .read-more, .publication-link, .other-documents {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .publication {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px; /* Adjust padding for smaller devices */
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .authors, .journal, .year {
+    font-size: 0.9rem;
+  }
+
+  .read-more, .publication-link, .other-documents {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
 
 
 /*message*/

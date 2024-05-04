@@ -10,13 +10,14 @@
     <link rel="icon" href="assets/favicon (1).ico" type="image/x-icon" />
 
     <style>
+        /* Box Container Styles */
         .box-container {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
             justify-content: space-around;
             max-width: 900px;
-            margin: 100px auto 0;
+            margin: 20px auto; /* Adjusted margin between education and counter boxes */
         }
 
         .box {
@@ -25,11 +26,21 @@
             perspective: 1000px;
         }
 
+        .box a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+
         .box-content {
             width: 100%;
             height: 100%;
             background-color: #f4f4f4;
-            color: #ff7700; /* Number in orange */
+            color: #ff7700;
             font-size: 1.5em;
             display: flex;
             flex-direction: column;
@@ -47,8 +58,40 @@
         .description {
             font-size: 0.7em;
             margin-top: 5px;
-            color: #000; /* Description in black */
+            color: #000;
             text-align: center;
+        }
+
+        /* Education Section Styles */
+        #education {
+            max-width: 900px;
+            margin: 100px auto 20px;  /* Decreased bottom margin here */
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #education h2 {
+            text-align: center;
+            color: #ff7700;
+            margin-bottom: 20px;
+        }
+
+        .education-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+        }
+
+        .education-card hr {
+            margin: 15px 0;
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
         }
 
         @media (max-width: 768px) {
@@ -72,7 +115,7 @@
                 <a href="#">Hemanth</a>
                 <div class="emoji">
                     <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
+                    <div a="eye right-eye"></div>
                     <div class="mouth"></div>
                 </div>
             </div>
@@ -89,24 +132,44 @@
         </div>
     </nav>
 
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div class="education-card">
+                <h3>Vellore Institute of Technology, Vellore, IN</h3>
+                <p>Sep 2020 - Jun 2024</p>
+                <hr />
+                <p>Bachelor of Technology in Computer Science and Engineering</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Boxes -->
     <div class="box-container">
         <div class="box">
-            <div class="box-content">
-                <span id="publications-counter">0+</span>
-                <div class="description">Research Publications</div>
-            </div>
+            <a href="research.html">
+                <div class="box-content">
+                    <span id="publications-counter">0+</span>
+                    <div class="description">Research Publications</div>
+                </div>
+            </a>
         </div>
         <div class="box">
-            <div class="box-content">
-                <span id="leetcode-counter">0+</span>
-                <div class="description">LeetCode Challenges</div>
-            </div>
+            <a href="https://leetcode.com/u/Hemanth_karnati/" target="_blank" rel="noopener noreferrer">
+                <div class="box-content">
+                    <span id="leetcode-counter">0+</span>
+                    <div class="description">LeetCode Challenges</div>
+                </div>
+            </a>
         </div>
         <div class="box">
-            <div class="box-content">
-                <span id="projects-counter">0+</span>
-                <div class="description">Impact Projects</div>
-            </div>
+            <a href="projects.html">
+                <div class="box-content">
+                    <span id="projects-counter">0+</span>
+                    <div class="description">Impact Projects</div>
+                </div>
+            </a>
         </div>
         <div class="box">
             <div class="box-content">
