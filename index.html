@@ -1,127 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="9yxa4X3O_V4bbAy4JMRJG1gTDqygv5824MAXZdVLevs" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/favicon (1).ico" type="image/x-icon" />
     <title>Hemanth Karnati</title>
-  </head>
-  <body>
+
+    <style>
+        .pdf-viewer {
+            width: 100%;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .pdf-viewer iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+        }
+
+        .pdf-viewer.active {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff7700;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            background-color: #e06600;
+        }
+
+        .resume-btn {
+            background-color: #ff7700;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+
+        .resume-btn:hover {
+            background-color: #e06600;
+        }
+
+        .section__container {
+            position: relative;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .resume-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
     <nav>
-      <div class="nav__content">
-        <div class="logo">
-            <a href="#">Hemanth</a><div class="emoji">
-              <div class="eye left-eye"></div>
-              <div class="eye right-eye"></div>
-              <div class="mouth"></div>
-            </div>
-          </div>
-          
-        <label for="check" class="checkbox">
-          <i class="ri-menu-line"></i>
-        </label>
-        <input type="checkbox" name="check" id="check" />
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="research.html">Research Publications</a></li>
-          <!--<li><a href="contact.html">Contact</a></li> -->
-        </ul>
-      </div>
-    </nav>
-    <section class="section">
-      <div class="section__container">
-        <div class="content">
-          <p class="subtitle">HELLO</p>
-          <h1 class="title">
-            I'm <span>Hemanth<br /> </span> 
-          </h1>
-          <p class="description">I'm Hemanth Karnati, a Computer Science and Engineering undergrad at VIT-Vellore, passionate about innovating in machine learning and computer science. Transitioning from basics to leading projects, I focus on leveraging technology for meaningful impact, with achievements in machine learning research and app development.
-          </p>
-          <div class="action__btns">
-            <!--<button class="hire__me">Hire Me</button> -->
-            <a href="mailto:karnati.hemanth2123@gmail.com?subject=Interest in Your Profile - Let's Discuss Further Opportunities" class="hire__me action__btns">Hire Me</a>
-
-
-            <button class="portfolio" id="linkedinButton">Linkedin</button>
-          </div>
-        </div>
-        <!--<div class="image">
-          <img src="assets/profile.jpg" alt="profile" />
-        </div>  -->
-
-        <div class="image" id="slideShow">
-            <div class="slide"style="color:#000080;">Actively Seeking full-time roles in Software Engineering </div>
-            <div class="slide"style="color:#000080;">Eager to engage in applied ML Research</div>
-            <div class="slide"style="color:#000080;">Actively seeking full-time opportunities in Data Science</div>
-            <div class="slide"style="color:#000080;">Open to Research project collaborations</div>
-            <div class="animation-container">
-                <div class="line"></div>
-                <!--<div class="ball"></div> -->
-                <div class="emoji1" id="ball">
+        <div class="nav__content">
+            <div class="logo">
+                <a href="index.html" class="Hemtop">Hemanth</a>
+                <div class="emoji">
                     <div class="eye left-eye"></div>
                     <div class="eye right-eye"></div>
                     <div class="mouth"></div>
-                  </div> 
-              </div>
-              
+                </div>
+            </div>
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+            <input type="checkbox" name="check" id="check" />
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research Publications</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
         </div>
-        
-        
+    </nav>
 
-        
-          
-          
-      </div>
+    <section class="section">
+        <div class="section__container">
+            <div class="content">
+                <p class="subtitle">HELLO</p>
+                <h1 class="title">
+                    I'm <span>Hemanth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <button class="resume-btn" onclick="showResume()"><i class='bx bx-file'></i></button>
+                </h1>
+                <p class="description">I'm Hemanth Karnati, a Computer Science and Engineering undergrad at VIT-Vellore, passionate about innovating in machine learning and computer science. Transitioning from basics to leading projects, I focus on leveraging technology for meaningful impact, with achievements in machine learning research and app development.
+                </p>
+                <div class="action__btns">
+                    <a href="mailto:karnati.hemanth2123@gmail.com?subject=Interest in Your Profile - Let's Discuss Further Opportunities" class="hire__me action__btns">Hire Me</a>
+                    <button class="portfolio" id="linkedinButton">Linkedin</button>
+                </div>
+                
+            </div>
+            <div class="image" id="slideShow">
+                <div class="slide" style="color:#000080;">Actively Seeking full-time roles in Software Engineering </div>
+                <div class="slide" style="color:#000080;">Eager to engage in applied ML Research</div>
+                <div class="slide" style="color:#000080;">Actively seeking full-time opportunities in Data Science</div>
+                <div class="slide" style="color:#000080;">Open to Research project collaborations</div>
+                <div class="animation-container">
+                    <div class="line"></div>
+                    <div class="emoji1" id="ball">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                        <div class="mouth"></div>
+                    </div> 
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-      <div class="socials">
-        <a href="https://www.kaggle.com/hemanthkarnati" target="_blank"><i class='bx bxl-kaggle' style="color:black;"></i></a>
-        <a href="https://github.com/Hemanth-Karnati-HK" target="_blank"><i class='bx bxl-github'></i></a>
-        <a href="https://twitter.com/HemanthKarnati" target="_blank"><i class='bx bxl-twitter'></i></a>
-        <a href="https://www.linkedin.com/in/hemanthkarnati/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-        <a href="karnati.hemanth2123@gmail.com" target="_blank"><i class='bx bxs-envelope'></i></a>
-        <a href="https://leetcode.com/yourprofile" target="_blank"><i class='bx bxl-leetcode'></i></a>
+    <div class="pdf-viewer" id="pdfViewer">
+        <button class="close-btn" onclick="closeResume()">×</button>
+        <iframe src="hemanth-karnati-resume-2024.pdf"></iframe>
     </div>
+
+    <footer>
+        <div class="socials">
+            <a href="https://www.kaggle.com/hemanthkarnati" target="_blank"><i class='bx bxl-kaggle' style="color:black;"></i></a>
+            <a href="https://github.com/Hemanth-Karnati-HK" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://twitter.com/HemanthKarnati" target="_blank"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com/in/hemanthkarnati/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="karnati.hemanth2123@gmail.com" target="_blank"><i class='bx bxs-envelope'></i></a>
+            <a href="https://leetcode.com/yourprofile" target="_blank"><i class='bx bxl-leetcode'></i></a>
+        </div>
         <p>Copyright ©2024, All rights reserved.</p>
     </footer>
-    
-    
-  </body>
-<script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
 
-    slides[currentSlide].classList.add('active');
+            slides[currentSlide].classList.add('active');
 
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % totalSlides;
-        slides[currentSlide].classList.add('active');
-    }
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % totalSlides;
+                slides[currentSlide].classList.add('active');
+            }
 
-    // Change slide every 4 seconds
-    setInterval(nextSlide, 4000);
-});
+            // Change slide every 4 seconds
+            setInterval(nextSlide, 4000);
+        });
 
-document.getElementById('linkedinButton').addEventListener('click', function() {
-    window.location.href = 'https://www.linkedin.com/in/hemanthkarnati/';
-});
+        document.getElementById('linkedinButton').addEventListener('click', function() {
+            window.location.href = 'https://www.linkedin.com/in/hemanthkarnati/';
+        });
 
+        function showResume() {
+            document.getElementById('pdfViewer').classList.add('active');
+        }
 
-</script>
-
-
+        function closeResume() {
+            document.getElementById('pdfViewer').classList.remove('active');
+        }
+    </script>
+</body>
 </html>
